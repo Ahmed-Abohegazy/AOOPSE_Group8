@@ -28,11 +28,9 @@ public class Application {
         this.applicant = applicant;
         this.company = company;
         this.ApplicationStatus = ApplicationStatus;
+        
     }
 
-    public void addObserver(){}
-    public void removeObserver(){}
-    public void updateAll(){}
     public Application cloneApplication(){
     return null;
     }
@@ -88,6 +86,8 @@ public class Application {
         this.ApplicationStatus = ApplicationStatus;
     }
     
+
+
     
     
 }

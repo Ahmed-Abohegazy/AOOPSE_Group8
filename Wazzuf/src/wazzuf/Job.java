@@ -16,7 +16,7 @@ import java.util.Date;
  */
 enum Type{INTERN,FULLTIME,PARTTIME};
 
-public class Job {
+public class Job  {
     
     private int ID;
     private String name;

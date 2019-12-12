@@ -10,5 +10,5 @@ package wazzuf;
  * @author Lenovo
  */
 public interface Observer {
-    public void update();
+    public void update(String s);
 }

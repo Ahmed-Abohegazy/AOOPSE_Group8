@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Lenovo
  */
 enum ValidationStatus{APPROVED, REJECTED, PENDING};
-public class Company {
+public class Company  {
     
     
     private int establishYear;
@@ -35,14 +35,6 @@ public class Company {
         this.companyValidationStatus = companyValidationStatus;
     }
     
-    
-    
-    public void editProfile(){};
-    public void deleteAccount(){};
-    public void submitReport(){};
-    public void update(){};
-    public void registerCompany(){};
-
     public int getEstablishYear() {
         return establishYear;
     }
@@ -90,5 +82,15 @@ public class Company {
     public void setCompanyValidationStatus(ValidationStatus companyValidationStatus) {
         this.companyValidationStatus = companyValidationStatus;
     }
+    
+    public void editProfile(){};
+    public void deleteAccount(){};
+    public void submitReport(){};
+    public void registerCompany(){};
+    
+    
+    
+    
+    
     
 }
