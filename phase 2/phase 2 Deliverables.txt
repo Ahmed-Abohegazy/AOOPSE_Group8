@@ -1,5 +1,0 @@
-* Refined quality scenarios (scenarios).
-* Refined class diagram (utilize three different remote design patterns).
-* Test cases (6 core scenarios for the functional requirements).
-* Package diagram depicting your system decomposition.
-* Deployment diagram.
