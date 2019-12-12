@@ -14,6 +14,7 @@ public class JobManager {
     public Job createJob(){
     return null;
     };
+     public void create_job(){};
     public void editJob(){};
     public void removeJob(){};
     public void applyForJob(int jobSeekerID){};

@@ -7,9 +7,12 @@ package wazzuf;
 
 /**
  *
- * @author Lenovo
+ * @author Ahmed_Abohgeazy
  */
-public interface AdminROI {
-    public Admin login(String username, String password);
-    public void changePassword(String password);
+public interface company_ROI {
+    
+    public void create_job();
+    public void editJob();
+    public void removeJob();
+
 }
