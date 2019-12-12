@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf/src/wazzuf/Admin_loginROI.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf/src/wazzuf/Admin.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf/src/wazzuf/Account.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf/src/wazzuf/company_ROI.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf/src/wazzuf/JobManager.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf/src/wazzuf/Wazzuf.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf/src/wazzuf/Job.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf/src/wazzuf/JobSeeker.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf/src/wazzuf/Observer.java</file>
         </group>
     </open-files>
 </project-private>
