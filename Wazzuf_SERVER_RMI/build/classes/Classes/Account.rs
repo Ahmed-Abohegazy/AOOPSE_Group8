@@ -1,2 +1,0 @@
-Classes.Account
-Classes.AccountType
