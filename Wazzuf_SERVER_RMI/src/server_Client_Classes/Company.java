@@ -6,13 +6,14 @@
 package server_Client_Classes;
 
 import java.util.ArrayList;
-
+import java.util.Observable;
+import java.util.Observer;
 /**
  *
  * @author Lenovo
  */
 enum ValidationStatus{APPROVED, REJECTED, PENDING};
-public class Company  {
+public class Company implements Observer,CompanyROI {
     
     
     private int establishYear;
@@ -87,6 +88,20 @@ public class Company  {
     public void deleteAccount(){};
     public void submitReport(){};
     public void registerCompany(){};
+
+    @Override
+    public void update(Observable o, Object o1) {
+        System.out.println("company : new job was posted");
+    }
+
+    @Override
+    public void createJob() {}//code
+
+    @Override
+    public void editJob() {}//code
+
+    @Override
+    public void removeJob() {}//code
     
     
     

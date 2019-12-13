@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import server_Client_Classes.User;
 
+import java.util.Observer;
+import java.util.Observable;
 /**
  *
  * @author Lenovo
@@ -17,7 +19,7 @@ import server_Client_Classes.User;
 
 enum gender{MALE,FEMALE};
 
-public class JobSeeker extends User {
+public class JobSeeker extends User implements Observer,JobSeekerROI {
     private boolean isPremium;
     private int appLimit;
     private gender Gender;
@@ -154,6 +156,14 @@ public class JobSeeker extends User {
     public void setSeekerApplications(ArrayList<Application> seekerApplications) {
         this.seekerApplications = seekerApplications;
     }
+
+    @Override
+    public void update(Observable o, Object o1) {
+        System.out.println("job seeker: there is new job for u ");
+    }
+
+    @Override
+    public void applyForJob() {}//code
     
     
 }

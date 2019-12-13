@@ -32,8 +32,10 @@ public class Job  {
     private int numOfPositions;
     private Date deadline;
     private ArrayList<Application> app;
+    private JobManager jobmng;//composition new (discuss about it)
 
     public Job() {
+        this.jobmng = new JobManager();
     }
 
     public Job(int ID, String name, Boolean Status, String level, float experience, String Category, Type jobType, String description, float Salary, String duration, String language, int numOfPositions, Date deadline, ArrayList<Application> app) {
@@ -53,12 +55,6 @@ public class Job  {
         this.app = app;
     }
     
-    
-    public void createJob(){};
-    public void editJob(){};
-    public void removeJob(){};
-    public void applyForJob(){};
-
     public int getID() {
         return ID;
     }
@@ -171,6 +167,11 @@ public class Job  {
         this.app = app;
     }
     
+    
+    public void createJob(){};
+    public void editJob(){};
+    public void removeJob(){};
+    public void applyForJob(){};
     
     
     
