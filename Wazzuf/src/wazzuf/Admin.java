@@ -16,13 +16,24 @@ public class Admin {
     private ArrayList<Company> companyList;
     private ArrayList<JobSeeker> jobSeekerList;
     private ArrayList<Report> reportList;
-    private Admin singleAdmin;
+    private static Admin singleAdmin;
     
     private void Admin(){};
     public void validateCompany(){};
     public void reviewReport(Report r){};
     public void giveWarning(int userID){};
+    
+    public static Admin getSingleAdmin() {
+         if(singleAdmin == null){
 
+         singleAdmin = new Admin();
+
+         }
+
+
+          return singleAdmin;
+      }
+    
     public String getSupportMail() {
         return supportMail;
     }
@@ -55,13 +66,7 @@ public class Admin {
         this.reportList = reportList;
     }
 
-    public Admin getSingleAdmin() {
-        return singleAdmin;
-    }
-
-    public void setSingleAdmin(Admin singleAdmin) {
-        this.singleAdmin = singleAdmin;
-    }
+  
     
     
 }
