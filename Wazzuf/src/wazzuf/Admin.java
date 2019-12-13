@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author Lenovo
  */
 public class Admin {
+    Admin_loginROI adminUser;
     private String supportMail;
     private ArrayList<Company> companyList;
     private ArrayList<JobSeeker> jobSeekerList;

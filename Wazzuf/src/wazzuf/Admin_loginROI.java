@@ -10,6 +10,6 @@ package wazzuf;
  * @author Lenovo
  */
 public interface Admin_loginROI {
-    public Admin login(String username, String password);
+    public void login(String username, String password);
     public void changePassword(String password);
 }

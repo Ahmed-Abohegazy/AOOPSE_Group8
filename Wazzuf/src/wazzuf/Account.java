@@ -12,13 +12,14 @@ package wazzuf;
 
 enum AccountType{ADMIN,JOBSEEKER,COMPANY};
 
-public class Account {
+public class Account implements Admin_loginROI{
     private String username;
     private String password;
     private AccountType userType;
 
-public void login(String username, String password, AccountType a){};
-public void changePassword(String newPass){};
+    public void login(String username, String password){};
+    public void changePassword(String newPass){};
+    public void registerAccount(String username, String password, AccountType at){};
 
     public Account(String username, String password, AccountType userType) {
         this.username = username;
