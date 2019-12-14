@@ -25,15 +25,17 @@ public class Wazzuf_SERVER_RMI {
      */
     public static void main(String[] args) throws RemoteException , AlreadyBoundException {
         // TODO code application logic here
+        WazzufDB db;
+        db = new WazzufDB();
+        
         AccountInterface AccountIC = new Account();
         Registry r = LocateRegistry.createRegistry(1099);
         r.bind("UserLogin", AccountIC);
         
         //Initiating DB.
-        WazzufDB db;
-        db = new WazzufDB();
+       
         
-       // Account ad = new Account("Ahmed2", "Mohamed3", Account.AccountType.JOBSEEKER);
+        Account ad = new Account("Ahmed2", "Mohamed3", "A");
         
        // JobSeeker ahmed3 = new JobSeeker(ad, "name of jobseeker", 123, "Bio", 123, null, "Bio");
         //db.insertJobseeker(ahmed3);
