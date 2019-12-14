@@ -88,13 +88,36 @@ public class WazzufDB {
    boolean result = APPcol.deleteOne(Filters.eq("ID", AID)).wasAcknowledged();
    }
 //
-//    public Student getStudentByMail(String email) {
-//        
-// Document doc1 = collection.find(Filters.eq("Email", email)).first();
-//     Student x = gson.fromJson(doc1.toJson(), Student.class);
-//     return x;
-//        }
-//
+    public JobSeeker getJobSeekerByID(int id ) {
+        
+ Document doc1 = JobseekerCol.find(Filters.eq("JSid", id)).first();
+     JobSeeker x = gson.fromJson(doc1.toJson(), JobSeeker.class);
+     return x;
+        }
+
+     public Company getCompanyByID(int id ) {
+        
+ Document doc1 = CompanyCol.find(Filters.eq("compID", id)).first();
+     Company x = gson.fromJson(doc1.toJson(), Company.class);
+     return x;
+        } 
+    
+      public Job getJobByID(int id ) {
+        
+     Document doc1 = JOBCOL.find(Filters.eq("ID", id)).first();
+     Job x = gson.fromJson(doc1.toJson(), Job.class);
+     return x;
+        }
+    
+    
+      public Application getApplicationByID(int id ) {
+        
+     Document doc1 = APPcol.find(Filters.eq("ID", id)).first();
+     Application x = gson.fromJson(doc1.toJson(), Application.class);
+     return x;
+        }
+    
+    
 //    public ArrayList<Student> getStudentsByYear(int year) {
 //        
 //           ArrayList<Document> doc2 = new ArrayList<Document>();
