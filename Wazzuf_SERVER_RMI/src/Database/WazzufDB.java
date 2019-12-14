@@ -76,6 +76,31 @@ public class WazzufDB {
     
     
     }
+        public Company getCompany(String Username, String Password){
+         ArrayList<Document> doc2 = new ArrayList<Document>(); 
+         ArrayList<Company> result = new ArrayList<Company>(); 
+         doc2 = CompanyCol.find().into(new ArrayList<Document>());
+          Company x = new Company();
+         boolean isFound = false;
+       for (int i = 0; i < doc2.size(); i++) {
+           
+           result.add( gson.fromJson(doc2.get(i).toJson(), Company.class));
+        }
+        for (int i = 0; i < result.size(); i++) {
+         if(result.get(i).getUseracc().getUsername().equals(Username)){
+           x = result.get(i);
+          return x;     
+           
+            
+        }
+        }
+         //Document jbsobj = JobseekerCol.find( Filters.eq("useracc"));
+        
+     return x;
+    
+    
+    }
+    
 
     public void insertCompany(Company s) {
         //s = gson.fromJson(doc.toJson(), Student.class);
