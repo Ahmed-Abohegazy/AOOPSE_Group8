@@ -170,60 +170,6 @@ public class WazzufDB {
         }
     
     
-//    public ArrayList<Student> getStudentsByYear(int year) {
-//        
-//           ArrayList<Document> doc2 = new ArrayList<Document>();
-//        ArrayList<Student> stud = new ArrayList<Student>();
-//          doc2 = collection.find(Filters.eq("year", year)).into( doc2);  
-//        for (int i = 0; i < doc2.size(); i++) {
-//     
-//        Student x = gson.fromJson(doc2.get(i).toJson(), Student.class);
-//          stud.add(x);
-//        System.out.println(x.getName()+ " and " + x.getYear());
-//        }
-//     
-//      return stud;
-//     
-//    }
-//
-////    public ArrayList<Student> getStudentsByYearLT(int year) {
-////
-////    }
-//
-//    public ArrayList<Student> getStudentsByCourse(String courseID) {
-//        ArrayList<Document> doc2 = new ArrayList<Document>();
-//        ArrayList<Student> stud = new ArrayList<Student>();
-//          doc2 = collection.find(Filters.eq("courses", courseID)).into( doc2 );  
-//      for (int i = 0; i < doc2.size(); i++) {
-//          
-//            Student x = gson.fromJson(doc2.get(i).toJson(), Student.class);
-//            stud.add(x);
-//            System.out.println(x.getName()+ " and " + x.getCourses());
-//        }
-//     return stud;
-//    }
-//
-//    public ArrayList<Student> getAllStudents() {
-//                ArrayList<Document> doc2 = new ArrayList<Document>(); 
-//                 ArrayList<Student> result = new ArrayList<Student>(); 
-//                
-//         doc2 = collection.find().into(new ArrayList<Document>());
-//         
-//         
-//       for (int i = 0; i < doc2.size(); i++) {
-//           
-//           result.add( gson.fromJson(doc2.get(i).toJson(), Student.class));
-//        }
-//     return result;
-//    }
-//
-//    public void updateStudent(Student s , Student q) {
-//        
-//       Document doc1 = Document.parse(gson.toJson(q));
-//       
-//    boolean result = collection.replaceOne(Filters.eq("name", s.getName()), doc1).wasAcknowledged();
-//        System.out.println("Student list Updated.");
-//    }
 
 
 
