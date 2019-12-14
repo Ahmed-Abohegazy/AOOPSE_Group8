@@ -41,6 +41,11 @@ public class Company extends User implements Observer,CompanyROI {
         this.companyValidationStatus = companyValidationStatus;
     }
 
+    public Company() {
+         super(null,null,0,null,0,null,null);
+    }
+
+
 
     
     public int getEstablishYear() {

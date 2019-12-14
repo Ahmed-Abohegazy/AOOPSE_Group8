@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/server_Client_Classes/Application.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/server_Client_Classes/Job.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/Database/WazzufDB.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/server_Client_Classes/JobSeeker.java</file>
-            <file>file:/C:/Users/Ahmed_Abohgeazy/Documents/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/server_Client_Classes/Company.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/ValidationStatusIT.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/JobSeekerIT.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/genderIT.java</file>
+            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/CompanyIT.java</file>
         </group>
     </open-files>
 </project-private>
