@@ -18,12 +18,13 @@ import server_Client_Classes.Application;
 import server_Client_Classes.Company;
 import server_Client_Classes.Job;
 import server_Client_Classes.JobSeeker;
+import wazzuf_server_rmi.Wazzuf_DB_Interface;
 
 /**
  *
  * 
  */
-public class WazzufDB {
+public class WazzufDB  implements Wazzuf_DB_Interface{
 
     private MongoClient client;
     private MongoDatabase database;
