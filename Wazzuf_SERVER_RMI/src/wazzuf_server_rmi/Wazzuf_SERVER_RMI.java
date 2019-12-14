@@ -11,6 +11,9 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import server_Client_Classes.*;
+import server_Client_Classes.Account;
+
+
 /**
  *
  * @author Ahmed_Abohgeazy
@@ -26,7 +29,10 @@ public class Wazzuf_SERVER_RMI {
          Registry r = LocateRegistry.createRegistry(1099);
                      WazzufDB db;
         db = new WazzufDB();
-        JobSeeker ahmed = new JobSeeker(1, "Ahmed", 123, "Bio", 123, null, "Bio");
+        
+        Account ad = new Account("Ahmed username", "Mohamed password", Account.AccountType.JOBSEEKER);
+        
+        JobSeeker ahmed = new JobSeeker(ad, "name of jobseeker", 123, "Bio", 123, null, "Bio");
         db.insertJobseeker(ahmed);
         
          System.out.print(("server is up and runnig "));

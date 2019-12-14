@@ -39,8 +39,9 @@ public class WazzufDB {
 //
     public void insertJobseeker(JobSeeker s) {
         //s = gson.fromJson(doc.toJson(), Student.class);
+        //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
         JobseekerCol.insertOne(Document.parse(gson.toJson(s)));
-        System.out.println("Jobseeker: " + s.getName() + " Added");
+        System.out.println("Jobseeker: " + s.getUseracc().getUsername() + s.getName() + s.getJSid() + " Added");
 
     }
 //
@@ -50,7 +51,7 @@ public class WazzufDB {
 //
 //    public Student getStudentByMail(String email) {
 //        
-//     Document doc1 = collection.find(Filters.eq("Email", email)).first();
+// Document doc1 = collection.find(Filters.eq("Email", email)).first();
 //     Student x = gson.fromJson(doc1.toJson(), Student.class);
 //     return x;
 //        }

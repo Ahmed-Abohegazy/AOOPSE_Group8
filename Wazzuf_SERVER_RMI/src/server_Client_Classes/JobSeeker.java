@@ -20,6 +20,7 @@ import java.util.Observable;
 enum gender{MALE,FEMALE};
 
 public class JobSeeker extends User implements Observer,JobSeekerROI {
+    private int JSid;
     private boolean isPremium;
     private int appLimit;
     private gender Gender;
@@ -31,11 +32,13 @@ public class JobSeeker extends User implements Observer,JobSeekerROI {
     private ArrayList<Job> jobInterests;
     private ArrayList<Job> jobs;
     private ArrayList<Application> seekerApplications;
-  public JobSeeker(int ID, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
-        super(ID, name, phoneNumber, address, WarningCounter, picture, Bio);
+  public JobSeeker(Account useracc, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
+        super(useracc ,name, phoneNumber, address, WarningCounter, picture, Bio);
+        this.JSid = userID;
         }
-    public JobSeeker(boolean isPremium, int appLimit, gender Gender, String cv, String achievement, String Skills, int ssn, Date birthDate, ArrayList<Job> jobInterests, ArrayList<Job> jobs, ArrayList<Application> seekerApplications, int ID, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
-        super(ID, name, phoneNumber, address, WarningCounter, picture, Bio);
+    public JobSeeker(boolean isPremium, int appLimit, gender Gender, String cv, String achievement, String Skills, int ssn, Date birthDate, ArrayList<Job> jobInterests, ArrayList<Job> jobs, ArrayList<Application> seekerApplications, Account useracc, int ID, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
+        super(useracc, name, phoneNumber, address, WarningCounter, picture, Bio);
+        this.JSid = userID;
         this.isPremium = isPremium;
         this.appLimit = appLimit;
         this.Gender = Gender;
@@ -157,6 +160,10 @@ public class JobSeeker extends User implements Observer,JobSeekerROI {
 
     public void setSeekerApplications(ArrayList<Application> seekerApplications) {
         this.seekerApplications = seekerApplications;
+    }
+
+    public int getJSid() {
+        return JSid;
     }
 
     @Override

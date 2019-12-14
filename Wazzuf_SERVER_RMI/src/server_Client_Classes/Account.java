@@ -10,12 +10,14 @@ package server_Client_Classes;
  * @author Lenovo
  */
 
-enum AccountType{ADMIN,JOBSEEKER,COMPANY};
+
 
 public class Account implements Admin_loginROI{
+    public enum AccountType{ADMIN,JOBSEEKER,COMPANY};
     private String username;
     private String password;
     private AccountType userType;
+
 
     public void login(String username, String password){};
     public void changePassword(String newPass){};

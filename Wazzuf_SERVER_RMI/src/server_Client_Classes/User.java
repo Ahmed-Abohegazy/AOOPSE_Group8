@@ -13,7 +13,8 @@ import java.sql.Blob;
  * @author Lenovo
  */
 public abstract class User {
-    private int ID;
+    private Account useracc;
+    protected static int userID;
     private String name;
     private int phoneNumber;
     private String address;
@@ -21,8 +22,9 @@ public abstract class User {
     private Blob picture;
     private String Bio;
 
-    public User(int ID, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
-        this.ID = ID;
+    public User(Account useracc, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
+        this.useracc = useracc;
+        User.userID = userID++;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
@@ -31,13 +33,19 @@ public abstract class User {
         this.Bio = Bio;
     }
 
-    public int getID() {
-        return ID;
+    public Account getUseracc() {
+        return useracc;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setUseracc(Account useracc) {
+        this.useracc = useracc;
     }
+
+   public static int getID() {
+        return userID;
+    }
+
+  
 
     public String getName() {
         return name;
