@@ -11,8 +11,9 @@ package server_Client_Classes;
  */
 enum ReportStatus{ACCEPTED,DENIED};
 
-public class Report {
+public class Report implements ReportInterface {
     private int ID;
+    private String title;
     private String reason;
     private ReportStatus status;
     private int reportedUserID;
@@ -21,8 +22,9 @@ public class Report {
     public Report() {
     }
 
-    public Report(int ID, String reason, int reportedUserID, boolean handled) {
+    public Report(int ID, String title, String reason, int reportedUserID, boolean handled) {
         this.ID = ID;
+        this.title = title;
         this.reason = reason;
         this.reportedUserID = reportedUserID;
         this.handled = handled;
