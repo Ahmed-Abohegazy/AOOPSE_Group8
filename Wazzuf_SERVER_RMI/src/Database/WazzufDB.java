@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
+import server_Client_Classes.Application;
+import server_Client_Classes.Company;
+import server_Client_Classes.Job;
 import server_Client_Classes.JobSeeker;
 
 /**
@@ -44,6 +47,29 @@ public class WazzufDB {
         System.out.println("Jobseeker: " + s.getUseracc().getUsername() + s.getName() + s.getJSid() + " Added");
 
     }
+    public void insertCompany(Company s) {
+        //s = gson.fromJson(doc.toJson(), Student.class);
+        //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
+        JobseekerCol.insertOne(Document.parse(gson.toJson(s)));
+        System.out.println("Company: " + s.getUseracc().getUsername() + s.getName() + s.getCompID()+ " Added");
+
+    }
+        public void insertJob(Job j) {
+        //s = gson.fromJson(doc.toJson(), Student.class);
+        //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
+        JobseekerCol.insertOne(Document.parse(gson.toJson(j)));
+        System.out.println("Job: " + j.getCategory()+j.getDescription()+j.getDuration()+ " Added");
+
+    }
+    
+         public void insertJob(Application A) {
+        //s = gson.fromJson(doc.toJson(), Student.class);
+        //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
+        JobseekerCol.insertOne(Document.parse(gson.toJson(A)));
+        System.out.println("Application: " + A.getApplicant()+A.getApplicationStatus()+A.getQuestionList()+ " Added");
+
+    }
+    
 //
 //    public void deleteStudent(String email, Student s) {
 //    boolean result = collection.deleteOne(Filters.eq(s.getEmail(), email)).wasAcknowledged();
