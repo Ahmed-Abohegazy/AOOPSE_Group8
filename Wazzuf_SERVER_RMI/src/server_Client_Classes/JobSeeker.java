@@ -32,6 +32,9 @@ public class JobSeeker extends User implements Observer,JobSeekerROI {
     private ArrayList<Job> jobInterests;
     private ArrayList<Job> jobs;
     private ArrayList<Application> seekerApplications;
+    public JobSeeker(){
+        super(null,null,0,null,0,null,null);
+    }
   public JobSeeker(Account useracc, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
         super(useracc ,name, phoneNumber, address, WarningCounter, picture, Bio);
         this.JSid = userID;

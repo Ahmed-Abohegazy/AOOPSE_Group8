@@ -44,6 +44,30 @@ public class WazzufDB {
         System.out.println("Jobseeker: " + s.getUseracc().getUsername() + s.getName() + s.getJSid() + " Added");
 
     }
+    public JobSeeker getJobSeeker(String Username, String Password){
+         ArrayList<Document> doc2 = new ArrayList<Document>(); 
+         ArrayList<JobSeeker> result = new ArrayList<JobSeeker>(); 
+         doc2 = JobseekerCol.find().into(new ArrayList<Document>());
+          JobSeeker x = new JobSeeker();
+         boolean isFound = false;
+       for (int i = 0; i < doc2.size(); i++) {
+           
+           result.add( gson.fromJson(doc2.get(i).toJson(), JobSeeker.class));
+        }
+        for (int i = 0; i < result.size(); i++) {
+         if(result.get(i).getUseracc().getUsername().equals(Username)){
+           x = result.get(i);
+          return x;     
+           
+            
+        }
+        }
+         //Document jbsobj = JobseekerCol.find( Filters.eq("useracc"));
+        
+     return x;
+    
+    
+    }
 //
 //    public void deleteStudent(String email, Student s) {
 //    boolean result = collection.deleteOne(Filters.eq(s.getEmail(), email)).wasAcknowledged();

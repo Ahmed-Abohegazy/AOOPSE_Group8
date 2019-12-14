@@ -30,12 +30,14 @@ public class Wazzuf_SERVER_RMI {
                      WazzufDB db;
         db = new WazzufDB();
         
-        Account ad = new Account("Ahmed username", "Mohamed password", Account.AccountType.JOBSEEKER);
+       // Account ad = new Account("Ahmed2", "Mohamed3", Account.AccountType.JOBSEEKER);
         
-        JobSeeker ahmed = new JobSeeker(ad, "name of jobseeker", 123, "Bio", 123, null, "Bio");
-        db.insertJobseeker(ahmed);
+       // JobSeeker ahmed3 = new JobSeeker(ad, "name of jobseeker", 123, "Bio", 123, null, "Bio");
+        //db.insertJobseeker(ahmed3);
         
-         System.out.print(("server is up and runnig "));
+        // System.out.print(("server is up and runnig "));
+         JobSeeker kk = db.getJobSeeker("Ahmed3", "Mohamed");
+         System.out.println("ABDOOOOOOOOOOOOOOO" + kk.getUseracc().getUsername());
          
     }
     
