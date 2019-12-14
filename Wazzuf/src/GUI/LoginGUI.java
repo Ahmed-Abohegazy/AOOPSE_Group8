@@ -226,7 +226,9 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseExited
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        // TODO add your handling code here:
+        
+        this.setVisible(false);
+        new RegisterGUI().setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
