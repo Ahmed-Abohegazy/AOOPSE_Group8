@@ -1,2 +1,0 @@
-The project implementation using RMI, Mongo DB
-test elhelw git
