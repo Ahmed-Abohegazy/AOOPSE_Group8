@@ -30,6 +30,8 @@ public class WazzufDB {
     private MongoCollection<Document> JobseekerCol;
     private MongoCollection<Document> CompanyCol;
     private MongoCollection<Document> AdminCol;
+     private MongoCollection<Document> APPcol;
+      private MongoCollection<Document> JOBCOL;
     private Gson gson = new Gson();
 
     public WazzufDB() {
@@ -38,6 +40,8 @@ public class WazzufDB {
        this.JobseekerCol = database.getCollection("JobseekerCol"); // Collection name
         this.CompanyCol = database.getCollection("CompanyCol"); // Collection name
         this.AdminCol = database.getCollection("AdminCol"); // Collection name
+        this.APPcol = database.getCollection("APPcol"); // Collection name
+        this.JOBCOL = database.getCollection("JOBCOL"); // Collection name
     }
 //
     public void insertJobseeker(JobSeeker s) {
@@ -50,30 +54,39 @@ public class WazzufDB {
     public void insertCompany(Company s) {
         //s = gson.fromJson(doc.toJson(), Student.class);
         //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
-        JobseekerCol.insertOne(Document.parse(gson.toJson(s)));
+        CompanyCol.insertOne(Document.parse(gson.toJson(s)));
         System.out.println("Company: " + s.getUseracc().getUsername() + s.getName() + s.getCompID()+ " Added");
 
     }
         public void insertJob(Job j) {
         //s = gson.fromJson(doc.toJson(), Student.class);
         //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
-        JobseekerCol.insertOne(Document.parse(gson.toJson(j)));
+        JOBCOL.insertOne(Document.parse(gson.toJson(j)));
         System.out.println("Job: " + j.getCategory()+j.getDescription()+j.getDuration()+ " Added");
 
     }
     
-         public void insertJob(Application A) {
+         public void insertApplication(Application A) {
         //s = gson.fromJson(doc.toJson(), Student.class);
         //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
-        JobseekerCol.insertOne(Document.parse(gson.toJson(A)));
+        APPcol.insertOne(Document.parse(gson.toJson(A)));
         System.out.println("Application: " + A.getApplicant()+A.getApplicationStatus()+A.getQuestionList()+ " Added");
 
     }
     
-//
-//    public void deleteStudent(String email, Student s) {
-//    boolean result = collection.deleteOne(Filters.eq(s.getEmail(), email)).wasAcknowledged();
-//    }
+
+   public void deleteJobSeeker(int JSid ) {
+   boolean result = JobseekerCol.deleteOne(Filters.eq("JSid", JSid)).wasAcknowledged();
+   }
+   public void deleteCompany(int compID ) {
+   boolean result = CompanyCol.deleteOne(Filters.eq("compID", compID)).wasAcknowledged();
+   }
+   public void deleteJob(int JID ) {
+   boolean result = JOBCOL.deleteOne(Filters.eq("ID", JID)).wasAcknowledged();
+   }
+     public void deleteApplication(int AID ) {
+   boolean result = APPcol.deleteOne(Filters.eq("ID", AID)).wasAcknowledged();
+   }
 //
 //    public Student getStudentByMail(String email) {
 //        
