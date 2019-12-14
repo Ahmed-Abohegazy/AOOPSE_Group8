@@ -20,20 +20,29 @@ public class Account implements AccountInterface,Admin_loginROI{
 
 
     public void login(String username, String password, String acctype){
-        if(acctype.equals("Admin")){
+        if(acctype.equals("A")){
         
             }
-        else if(acctype.equals("Company")){  
+        else if(acctype.equals("C")){  
         
         }
-        else if(acctype.equals("Jobseeker")){        
+        else if(acctype.equals("J")){        
         
         }
 //calling database function retrieving arraylist
     
     };
-    public void changePassword(String newPass){};
-    public void registerAccount(String username, String password,String acctype){};
+    public void changePassword(String newPass){
+    
+    };
+    public void registerAccount(String username, String password,String acctype){
+            if(acctype.equals("A")){
+        
+            }
+            else if(acctype.equals("J")){        
+        
+        }
+    };
 
     public Account(){
     
