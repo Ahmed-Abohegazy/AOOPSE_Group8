@@ -12,18 +12,34 @@ package server_Client_Classes;
 
 
 
-public class Account implements Admin_loginROI{
-    public enum AccountType{ADMIN,JOBSEEKER,COMPANY};
+public class Account implements AccountInterface,Admin_loginROI{
+    
     private String username;
     private String password;
-    private AccountType userType;
+    private String userType;
 
 
-    public void login(String username, String password){};
+    public void login(String username, String password, String acctype){
+        if(acctype.equals("Admin")){
+        
+            }
+        else if(acctype.equals("Company")){  
+        
+        }
+        else if(acctype.equals("Jobseeker")){        
+        
+        }
+//calling database function retrieving arraylist
+    
+    };
     public void changePassword(String newPass){};
-    public void registerAccount(String username, String password, AccountType at){};
+    public void registerAccount(String username, String password,String acctype){};
 
-    public Account(String username, String password, AccountType userType) {
+    public Account(){
+    
+    }
+    
+    public Account(String username, String password, String acctype) {
         this.username = username;
         this.password = password;
         this.userType = userType;
@@ -45,11 +61,11 @@ public class Account implements Admin_loginROI{
         this.password = password;
     }
 
-    public AccountType getUserType() {
+    public String getUserType() {
         return userType;
     }
 
-    public void setUserType(AccountType userType) {
+    public void setUserType(String userType) {
         this.userType = userType;
     }
 

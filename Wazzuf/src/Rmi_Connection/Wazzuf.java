@@ -5,6 +5,7 @@
  */
 package Rmi_Connection;
 
+import Controller.LoginController;
 import GUI.*;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
@@ -28,6 +29,7 @@ public class Wazzuf {
         loginGUIobj.setVisible(true); // This shows the gui        
 // We connect to the RMI Registry
         Registry r = LocateRegistry.getRegistry(1099);
+        LoginController Logingui_controller = new LoginController(loginGUIobj, r);
      System.out.print(("client is up and runnig "));
     
     }

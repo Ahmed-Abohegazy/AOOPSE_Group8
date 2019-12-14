@@ -10,6 +10,6 @@ package server_Client_Classes;
  * @author Lenovo
  */
 public interface Admin_loginROI {
-    public void login(String username, String password);
+    public void login(String username, String password, String acctype);
     public void changePassword(String password);
 }
