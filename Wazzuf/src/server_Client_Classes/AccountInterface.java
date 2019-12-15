@@ -13,7 +13,7 @@ import java.rmi.RemoteException;
  * @author Lenovo
  */
 
-public interface AccountInterface extends Remote{
+public interface AccountInterface extends Remote {
     public boolean login(String username, String password, String AccountType) throws RemoteException;
     public void changePassword(String newPass)  throws RemoteException;
     public void registerAccount(String username, String password, String acctype) throws RemoteException;

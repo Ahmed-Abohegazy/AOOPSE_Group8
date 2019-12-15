@@ -11,7 +11,7 @@ package server_Client_Classes;
  */
 enum ReportStatus{ACCEPTED,DENIED};
 
-public class Report implements ReportInterface {
+public class Report implements ReportFacade {
     private int ID;
     private String title;
     private String reason;
@@ -19,8 +19,7 @@ public class Report implements ReportInterface {
     private int reportedUserID;
     private boolean handled;
 
-    public Report() {
-    }
+ 
 
     public Report(int ID, String title, String reason, int reportedUserID, boolean handled) {
         this.ID = ID;
@@ -59,6 +58,20 @@ public class Report implements ReportInterface {
     }
 
     public void setHandled(boolean handled) {
+        this.handled = handled;
+    }
+
+    @Override
+    public void getReportData() {
+      
+    }
+
+    @Override
+    public void setReportData(int ID, String title, String reason, int reportedUserID, boolean handled) {
+        this.ID = ID;
+        this.title = title;
+        this.reason = reason;
+        this.reportedUserID = reportedUserID;
         this.handled = handled;
     }
     

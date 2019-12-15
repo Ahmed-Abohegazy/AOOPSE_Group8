@@ -3,12 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/ApplicationTest.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/CompanyTest.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/server_Client_Classes/Company.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/server_Client_Classes/Application.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/src/Database/WazzufDB.java</file>
-            <file>file:/C:/Users/ahmed/Desktop/AOOPSE_Group8/Wazzuf_SERVER_RMI/test/server_Client_Classes/JobTest.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/Database/WazzufDB.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/test/server_Client_Classes/JobTest.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/test/server_Client_Classes/ReportTest.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/server_Client_Classes/ReportInterface.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/wazzuf_server_rmi/Wazzuf_SERVER_RMI.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/server_Client_Classes/Job.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/server_Client_Classes/ReportFacade.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/server_Client_Classes/Application.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/test/server_Client_Classes/SearchJobTest.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/test/server_Client_Classes/ApplicationTest.java</file>
+            <file>file:/C:/Users/Lenovo/Documents/GitHub/Aoose(2)/Wazzuf_SERVER_RMI/src/server_Client_Classes/Report.java</file>
         </group>
     </open-files>
 </project-private>

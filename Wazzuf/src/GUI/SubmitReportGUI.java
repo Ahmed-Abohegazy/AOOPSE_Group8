@@ -5,6 +5,10 @@
  */
 package GUI;
 
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Lenovo
@@ -79,6 +83,9 @@ public class SubmitReportGUI extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/submit.png"))); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel4MouseEntered(evt);
             }
@@ -184,6 +191,27 @@ public class SubmitReportGUI extends javax.swing.JFrame {
     private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/submit.png")));
     }//GEN-LAST:event_jLabel4MouseExited
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+    
 
     /**
      * @param args the command line arguments

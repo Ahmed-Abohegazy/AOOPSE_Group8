@@ -6,7 +6,7 @@
 package Rmi_Connection;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import  server_Client_Classes.Application;
+import server_Client_Classes.Application;
 import server_Client_Classes.Company;
 import server_Client_Classes.Job;
 import server_Client_Classes.JobSeeker;

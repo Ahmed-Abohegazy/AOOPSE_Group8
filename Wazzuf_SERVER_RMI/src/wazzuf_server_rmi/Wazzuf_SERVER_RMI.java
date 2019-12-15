@@ -31,6 +31,7 @@ public class Wazzuf_SERVER_RMI  {
         AccountInterface AccountIC = new Account();
         Registry r = LocateRegistry.createRegistry(1099);
         r.bind("UserLogin", AccountIC);
+        //r.bind("Report", ReportFacade);
         
         //Initiating DB.
        
@@ -42,7 +43,7 @@ public class Wazzuf_SERVER_RMI  {
         
         // System.out.print(("server is up and runnig "));
          JobSeeker kk = db.getJobSeeker("Ahmed2", "Mohamed");
-         System.out.println("ABDOOOOOOOOOOOOOOO" + kk.getUseracc().getUsername());
+         System.out.println("Test: " + kk.getUseracc().getUsername());
          
     }
     
