@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package server_Client_Classes;
+import Database.WazzufDB;
 import java.util.ArrayList;
 import java.util.Observer;
 
@@ -14,16 +15,25 @@ import java.util.Observer;
 public class JobManager implements Observable {
     private ArrayList<Observer> observers = new ArrayList<Observer>();
     private Job JobMGR;
-    public Job createJob(){
-    return null;
+    
+    public void createJob(int ID, String name, float Salary, String Category){
+        this.JobMGR = new Job( ID,  name,  Salary,  Category);
+        WazzufDB db = new WazzufDB();
+        db.insertJob(JobMGR);
     };
+    
      public void create_job(){
          notifyObservers();
-     
      }
      
-    public void editJob(){};
-    public void removeJob(){};
+    public void editJob(){
+    
+    };
+    public void removeJob(Job j){
+        int id = j.getID();
+     WazzufDB db = new WazzufDB();
+     db.deleteJob(id);
+    };
     public void applyForJob(int jobSeekerID){};
 
     @Override

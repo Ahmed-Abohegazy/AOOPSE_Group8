@@ -37,6 +37,12 @@ public class Job  {
     public Job() {
         this.jobmng = new JobManager();
     }
+    public Job(int ID, String name, float Salary, String Category){
+    this.ID = ID;
+    this.name = name;
+    this.Salary = Salary;
+    this.Category = Category;
+    }
 
     public Job(int ID, String name, Boolean Status, String level, float experience, String Category, Type jobType, String description, float Salary, String duration, String language, int numOfPositions, Date deadline, ArrayList<Application> app) {
         this.ID = ID;

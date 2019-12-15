@@ -46,6 +46,7 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         this.JOBCOL = database.getCollection("JOBCOL"); // Collection name
     }
 //
+    
     public void insertJobseeker(JobSeeker s) {
         //s = gson.fromJson(doc.toJson(), Student.class);
         Document doc1 = JobseekerCol.find(Filters.eq("useracc.username", s.getUseracc().getUsername())).first();
@@ -54,25 +55,7 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         System.out.println("Jobseeker: " + s.getUseracc().getUsername() + s.getName() + s.getJSid() + " Added");
     }
     
-    public Admin getAdmin(String Username, String Password){
-        ArrayList<Document> doc2 = new ArrayList<Document>();
-        ArrayList<Admin> result = new ArrayList<Admin>();
-        doc2 = AdminCol.find().into(new ArrayList<Document>());
-          Admin x = new Admin();
-         boolean isFound = false;
-       for (int i = 0; i < doc2.size(); i++) {
-           
-           result.add( gson.fromJson(doc2.get(i).toJson(), Admin.class));
-        }
-        for (int i = 0; i < result.size(); i++) {
-//         if(result.get(i).getUseracc().getUsername().equals(Username)){
-           x = result.get(i);
-          return x;     
-    
-   //         }
-        }
-        return null;
-    }
+
     public JobSeeker getJobSeeker(String Username, String Password){
          ArrayList<Document> doc2 = new ArrayList<Document>(); 
          ArrayList<JobSeeker> result = new ArrayList<JobSeeker>(); 
@@ -97,15 +80,26 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
     
     
     }
+    public JobSeeker getJobSeekerByID(int id ) {
+        
+     Document doc1 = JobseekerCol.find(Filters.eq("JSid", id)).first();
+     JobSeeker x = gson.fromJson(doc1.toJson(), JobSeeker.class);
+     return x;
+    }
     
-    public JobSeeker updateJobSeeker(JobSeeker s, JobSeeker y){
+    public void updateJobSeeker(JobSeeker s, JobSeeker y){
     Document doc1 = Document.parse(gson.toJson(y));
     JobSeeker x = new JobSeeker();
     //Assuming names are unique.
     boolean result = JobseekerCol.replaceOne(Filters.eq("useracc.username", s.getUseracc().getUsername()), doc1).wasAcknowledged(); 
-     System.out.println("Student list Updated.");
-    return x;
+     System.out.println("Jobseeker list Updated.");
+    
     }
+       public void deleteJobSeeker(int JSid ) {
+   boolean result = JobseekerCol.deleteOne(Filters.eq("JSid", JSid)).wasAcknowledged();
+   }
+
+  
        
         
        
@@ -148,6 +142,16 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         System.out.println("Company: " + s.getUseracc().getUsername() + s.getName() + s.getCompID()+ " Added");
 
     }
+         public Company getCompanyByID(int id ) {
+        
+ Document doc1 = CompanyCol.find(Filters.eq("compID", id)).first();
+     Company x = gson.fromJson(doc1.toJson(), Company.class);
+     return x;
+        } 
+       public void deleteCompany(int compID ) {
+   boolean result = CompanyCol.deleteOne(Filters.eq("compID", compID)).wasAcknowledged();
+   }
+
         public void insertJob(Job j) {
         //s = gson.fromJson(doc.toJson(), Student.class);
         //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
@@ -155,7 +159,23 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         System.out.println("Job: " + j.getCategory()+j.getDescription()+j.getDuration()+ " Added");
 
     }
+         public void updateJob(Job s, Job y){
+            Document doc1 = Document.parse(gson.toJson(y));
+            Job x = new Job();
+            //Assuming names are unique.
+            boolean result = JobseekerCol.replaceOne(Filters.eq("ID", s.getID()), doc1).wasAcknowledged(); 
+             System.out.println("Job list Updated.");
+
+    }
+            public void deleteJob(int JID ) {
+             boolean result = JOBCOL.deleteOne(Filters.eq("ID", JID)).wasAcknowledged();
+    }
+            public Job getJobByID(int id ) {
         
+            Document doc1 = JOBCOL.find(Filters.eq("ID", id)).first();
+            Job x = gson.fromJson(doc1.toJson(), Job.class);
+            return x;
+    }
     
          public void insertApplication(Application A) {
         //s = gson.fromJson(doc.toJson(), Student.class);
@@ -164,51 +184,47 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         System.out.println("Application: " + A.getApplicant()+A.getApplicationStatus()+A.getQuestionList()+ " Added");
 
     }
-    
-
-   public void deleteJobSeeker(int JSid ) {
-   boolean result = JobseekerCol.deleteOne(Filters.eq("JSid", JSid)).wasAcknowledged();
-   }
-   public void deleteCompany(int compID ) {
-   boolean result = CompanyCol.deleteOne(Filters.eq("compID", compID)).wasAcknowledged();
-   }
-   public void deleteJob(int JID ) {
-   boolean result = JOBCOL.deleteOne(Filters.eq("ID", JID)).wasAcknowledged();
-   }
-     public void deleteApplication(int AID ) {
-   boolean result = APPcol.deleteOne(Filters.eq("ID", AID)).wasAcknowledged();
-   }
-
-//
-    public JobSeeker getJobSeekerByID(int id ) {
-        
- Document doc1 = JobseekerCol.find(Filters.eq("JSid", id)).first();
-     JobSeeker x = gson.fromJson(doc1.toJson(), JobSeeker.class);
-     return x;
-        }
-
-     public Company getCompanyByID(int id ) {
-        
- Document doc1 = CompanyCol.find(Filters.eq("compID", id)).first();
-     Company x = gson.fromJson(doc1.toJson(), Company.class);
-     return x;
-        } 
-    
-      public Job getJobByID(int id ) {
-        
-     Document doc1 = JOBCOL.find(Filters.eq("ID", id)).first();
-     Job x = gson.fromJson(doc1.toJson(), Job.class);
-     return x;
-        }
-    
-    
-      public Application getApplicationByID(int id ) {
+              public Application getApplicationByID(int id ) {
         
      Document doc1 = APPcol.find(Filters.eq("ID", id)).first();
      Application x = gson.fromJson(doc1.toJson(), Application.class);
      return x;
         }
     
+
+
+     public void deleteApplication(int AID ) {
+   boolean result = APPcol.deleteOne(Filters.eq("ID", AID)).wasAcknowledged();
+   }
+
+//
+
+
+
+
+    
+    
+ 
+      
+        public Admin getAdmin(String Username, String Password){
+        ArrayList<Document> doc2 = new ArrayList<Document>();
+        ArrayList<Admin> result = new ArrayList<Admin>();
+        doc2 = AdminCol.find().into(new ArrayList<Document>());
+          Admin x = new Admin();
+         boolean isFound = false;
+       for (int i = 0; i < doc2.size(); i++) {
+           
+           result.add( gson.fromJson(doc2.get(i).toJson(), Admin.class));
+        }
+        for (int i = 0; i < result.size(); i++) {
+//         if(result.get(i).getUseracc().getUsername().equals(Username)){
+           x = result.get(i);
+          return x;     
+    
+   //         }
+        }
+        return null;
+    }
     
 
 
