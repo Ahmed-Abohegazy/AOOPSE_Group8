@@ -31,7 +31,7 @@ public class LoginController {
         this.r = r;
         // This registers the button with our action listener below (the inner class)
         
-        gui.getjButton1().addActionListener((ActionListener) new getLoginButtonAction());
+        gui.getLoginSubmitButton().addAncestorListener((AncestorListener) new getLoginButtonAction());
     }
     class getLoginButtonAction implements ActionListener {
 

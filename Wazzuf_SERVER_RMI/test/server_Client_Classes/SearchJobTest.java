@@ -17,11 +17,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author ahmed
+ * @author Lenovo
  */
-public class JobTest {
+public class SearchJobTest {
     
-    public JobTest() {
+    public SearchJobTest() {
     }
     
     @BeforeClass
@@ -30,35 +30,29 @@ public class JobTest {
     
     @AfterClass
     public static void tearDownClass() {
-        
     }
     
     @Before
     public void setUp() {
-        ArrayList<Application> a[] = null;
-        
-        Job instance;
-        instance = new Job(1,"first",true,"three", 2.0f,"SE", Type.PARTTIME, " ", 250.0f, "one year", "eng",5, ("2020-01-01") ,a);
-        
+        Job J = new Job(4, "Graphic designer", 5000, "Graphics");
     }
     
-    @After
-    public void tearDown() {
-    }
-    
+   
     @Test
     public void TestJob(){
-        //Get job by ID.
-       ArrayList<Application> a[] = null;
-       Job instance;
-       instance = new Job(1,"first",true,"three", 2.0f,"SE", Type.PARTTIME, " ", 250.0f, "one year", "eng",5, ("2020-01-01") ,a);
+       
+       //Get job by name.
+      Job J = new Job(4, "Graphic designer", 5000, "Graphics");
+       
        WazzufDB db = new WazzufDB();
-       db.insertJob(instance);
-       int id = db.getJobByID(1).getID();
-        
-       assertEquals(1,id);
+       db.insertJob(J);
+       Job r = db.getJobByName("Graphic designer");
+        String name = r.getName();
+       assertEquals("Graphic designer",name);
     }
-
+     @After
+    public void tearDown() {
+    }
     /**
      * Test of getID method, of class Job.
      */
@@ -469,7 +463,6 @@ public class JobTest {
         System.out.println("removeJob");
         Job instance = new Job();
         instance.removeJob();
-        assertNull(instance.getID());
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

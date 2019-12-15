@@ -19,6 +19,7 @@ import server_Client_Classes.Application;
 import server_Client_Classes.Company;
 import server_Client_Classes.Job;
 import server_Client_Classes.JobSeeker;
+import server_Client_Classes.Report;
 import wazzuf_server_rmi.Wazzuf_DB_Interface;
 
 /**
@@ -34,6 +35,7 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
     private MongoCollection<Document> AdminCol;
      private MongoCollection<Document> APPcol;
       private MongoCollection<Document> JOBCOL;
+      private MongoCollection<Document> ReportCol;
     private Gson gson = new Gson();
 
     public WazzufDB() {
@@ -44,17 +46,30 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         this.AdminCol = database.getCollection("AdminCol"); // Collection name
         this.APPcol = database.getCollection("APPcol"); // Collection name
         this.JOBCOL = database.getCollection("JOBCOL"); // Collection name
+        this.ReportCol = database.getCollection("ReportCol");
     }
 //
     
     public void insertJobseeker(JobSeeker s) {
         //s = gson.fromJson(doc.toJson(), Student.class);
-        Document doc1 = JobseekerCol.find(Filters.eq("useracc.username", s.getUseracc().getUsername())).first();
+       // Document doc1 = JobseekerCol.find(Filters.eq("useracc.username", s.getUseracc().getUsername())).first();
         
         JobseekerCol.insertOne(Document.parse(gson.toJson(s)));
         System.out.println("Jobseeker: " + s.getUseracc().getUsername() + s.getName() + s.getJSid() + " Added");
     }
+    public void insertReport(Report r){
+        
+    ReportCol.insertOne(Document.parse(gson.toJson(r)));
+    System.out.println("Report" + r.getID() + " added.");
     
+    }
+    public Report getReportbyID(int ID){
+         
+          Document doc1 = ReportCol.find(Filters.eq("ID", ID)).first();
+            Report r = gson.fromJson(doc1.toJson(), Report.class);
+            
+    return r;
+    }
 
     public JobSeeker getJobSeeker(String Username, String Password){
          ArrayList<Document> doc2 = new ArrayList<Document>(); 
@@ -173,6 +188,12 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
             public Job getJobByID(int id ) {
         
             Document doc1 = JOBCOL.find(Filters.eq("ID", id)).first();
+            Job x = gson.fromJson(doc1.toJson(), Job.class);
+            return x;
+    }
+            public Job getJobByName(String name) {
+        
+            Document doc1 = JOBCOL.find(Filters.eq("Name", name)).first();
             Job x = gson.fromJson(doc1.toJson(), Job.class);
             return x;
     }
