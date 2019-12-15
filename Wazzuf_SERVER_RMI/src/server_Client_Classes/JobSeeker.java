@@ -35,6 +35,9 @@ public class JobSeeker extends User implements Observer,JobSeekerROI {
     public JobSeeker(){
         super(null,null,0,null,0,null,null);
     }
+    public JobSeeker(Account useracc){
+    super(useracc,null,0,null,0,null,null);
+    }
   public JobSeeker(Account useracc, String name, int phoneNumber, String address, int WarningCounter, Blob picture, String Bio) {
         super(useracc ,name, phoneNumber, address, WarningCounter, picture, Bio);
         this.JSid = userID;
@@ -76,7 +79,7 @@ public class JobSeeker extends User implements Observer,JobSeekerROI {
     public void removeJobInterests(){};
     public void submitReport(Report r){};
     public void upgradeToPremium(PaymentMethod r){};
-    public void registerJobSeeker(){};
+    
 
     public boolean isIsPremium() {
         return isPremium;

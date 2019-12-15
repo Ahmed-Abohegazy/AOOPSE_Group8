@@ -5,11 +5,13 @@
  */
 package server_Client_Classes;
 
+import java.rmi.RemoteException;
+
 /**
  *
  * @author Lenovo
  */
 public interface Admin_loginROI {
-    public void login(String username, String password, String acctype);
-    public void changePassword(String password);
+    public boolean login(String username, String password, String acctype)  throws RemoteException;
+    public void changePassword(String password)  throws RemoteException;
 }

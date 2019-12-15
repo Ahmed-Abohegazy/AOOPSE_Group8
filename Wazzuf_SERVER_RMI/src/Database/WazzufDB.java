@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
+import server_Client_Classes.Admin;
 import server_Client_Classes.Application;
 import server_Client_Classes.Company;
 import server_Client_Classes.Job;
@@ -47,12 +48,31 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
 //
     public void insertJobseeker(JobSeeker s) {
         //s = gson.fromJson(doc.toJson(), Student.class);
-        //Document doc1 = JobseekerCol.find(Filters.eq("Email", )).first();
+        Document doc1 = JobseekerCol.find(Filters.eq("useracc.username", s.getUseracc().getUsername())).first();
+        
         JobseekerCol.insertOne(Document.parse(gson.toJson(s)));
         System.out.println("Jobseeker: " + s.getUseracc().getUsername() + s.getName() + s.getJSid() + " Added");
-
     }
-
+    
+    public Admin getAdmin(String Username, String Password){
+        ArrayList<Document> doc2 = new ArrayList<Document>();
+        ArrayList<Admin> result = new ArrayList<Admin>();
+        doc2 = AdminCol.find().into(new ArrayList<Document>());
+          Admin x = new Admin();
+         boolean isFound = false;
+       for (int i = 0; i < doc2.size(); i++) {
+           
+           result.add( gson.fromJson(doc2.get(i).toJson(), Admin.class));
+        }
+        for (int i = 0; i < result.size(); i++) {
+//         if(result.get(i).getUseracc().getUsername().equals(Username)){
+           x = result.get(i);
+          return x;     
+    
+   //         }
+        }
+        return null;
+    }
     public JobSeeker getJobSeeker(String Username, String Password){
          ArrayList<Document> doc2 = new ArrayList<Document>(); 
          ArrayList<JobSeeker> result = new ArrayList<JobSeeker>(); 
@@ -77,6 +97,24 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
     
     
     }
+    
+    public JobSeeker updateJobSeeker(JobSeeker s, JobSeeker y){
+    Document doc1 = Document.parse(gson.toJson(y));
+    JobSeeker x = new JobSeeker();
+    //Assuming names are unique.
+    boolean result = JobseekerCol.replaceOne(Filters.eq("useracc.username", s.getUseracc().getUsername()), doc1).wasAcknowledged(); 
+     System.out.println("Student list Updated.");
+    return x;
+    }
+       
+        
+       
+       
+    
+       
+    
+       
+       
         public Company getCompany(String Username, String Password){
          ArrayList<Document> doc2 = new ArrayList<Document>(); 
          ArrayList<Company> result = new ArrayList<Company>(); 
@@ -117,6 +155,7 @@ public class WazzufDB  implements Wazzuf_DB_Interface{
         System.out.println("Job: " + j.getCategory()+j.getDescription()+j.getDuration()+ " Added");
 
     }
+        
     
          public void insertApplication(Application A) {
         //s = gson.fromJson(doc.toJson(), Student.class);

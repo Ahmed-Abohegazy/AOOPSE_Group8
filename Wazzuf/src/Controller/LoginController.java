@@ -30,7 +30,8 @@ public class LoginController {
         this.gui = gui;
         this.r = r;
         // This registers the button with our action listener below (the inner class)
-        gui.getLoginSubmitButton().addAncestorListener((AncestorListener) new getLoginButtonAction());
+        
+        gui.getjButton1().addActionListener((ActionListener) new getLoginButtonAction());
     }
     class getLoginButtonAction implements ActionListener {
 
@@ -44,12 +45,15 @@ public class LoginController {
             char[] c = gui.getjPasswordField1().getPassword();
             String password = String.copyValueOf(c); 
             String type = gui.getjComboBox1();
-                    
-            g.login(username,password, type);
+           if(type == "J" && g.login(username, password, type) == true){
+               gui.setVisible(false);
+           }         
+            
 
                 // Once we got the result from our remote object, we can set it to
                 // appear inside the gui using the jLabel
                 gui.setVisible(false);
+                
                 
                 } catch (RemoteException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);

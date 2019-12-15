@@ -18,7 +18,7 @@ import server_Client_Classes.Account;
  *
  * @author Ahmed_Abohgeazy
  */
-public class Wazzuf_SERVER_RMI {
+public class Wazzuf_SERVER_RMI  {
 
     /**
      * @param args the command line arguments
@@ -35,13 +35,13 @@ public class Wazzuf_SERVER_RMI {
         //Initiating DB.
        
         
-        Account ad = new Account("Ahmed2", "Mohamed3", "A");
+        Account ad = new Account("Ahmed2", "Mohamed3", "J");
         
-       // JobSeeker ahmed3 = new JobSeeker(ad, "name of jobseeker", 123, "Bio", 123, null, "Bio");
-        //db.insertJobseeker(ahmed3);
+        JobSeeker ahmed3 = new JobSeeker(ad, "name of jobseeker", 123, "Bio", 123, null, "Bio");
+        db.insertJobseeker(ahmed3);
         
         // System.out.print(("server is up and runnig "));
-         JobSeeker kk = db.getJobSeeker("Ahmed3", "Mohamed");
+         JobSeeker kk = db.getJobSeeker("Ahmed2", "Mohamed");
          System.out.println("ABDOOOOOOOOOOOOOOO" + kk.getUseracc().getUsername());
          
     }
