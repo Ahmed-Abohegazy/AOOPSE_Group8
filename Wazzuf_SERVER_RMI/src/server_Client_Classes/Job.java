@@ -171,7 +171,11 @@ public class Job  {
     public void createJob(){};
     public void editJob(){};
     public void removeJob(){};
-    public void applyForJob(){};
+    
+    public void applyForJob(){
+        
+    
+    };
     
     
     

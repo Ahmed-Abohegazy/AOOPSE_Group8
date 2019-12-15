@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author kc
+ * @author ahmed
  */
-public class ValidationStatusIT {
+public class ValidationStatusTest {
     
-    public ValidationStatusIT() {
+    public ValidationStatusTest() {
     }
     
     @BeforeClass
